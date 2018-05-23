@@ -1,0 +1,17 @@
+---
+Name: silverware-userforms
+---
+
+# Configure User Defined Form:
+
+SilverStripe\UserForms\Model\UserDefinedForm:
+  block_default_userforms_js: true
+  block_default_userforms_css: true
+
+# Configure User Form Extensions:
+
+SilverStripe\UserForms\Form\UserForm:
+  extensions:
+    - SilverWare\UserForms\Extensions\UserFormExtension
+  custom_validator_class: SilverWare\Validator\Validator
+  custom_validator_enabled: true

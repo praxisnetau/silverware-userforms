@@ -1,0 +1,12 @@
+---
+Name: modules-silverware-userforms
+Before:
+  - '#modules-framework'
+  - '#modules-other'
+---
+
+# Configure Module Priority:
+
+SilverStripe\Core\Manifest\ModuleManifest:
+  module_priority:
+    - silverware/userforms
