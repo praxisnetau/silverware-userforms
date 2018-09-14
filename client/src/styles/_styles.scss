@@ -4,7 +4,33 @@
 .userdefinedform {
   
   form.userform {
+    
     margin-bottom: $spacer;
+    
+    .field {
+      
+      &.hide {
+        display: none;
+      }
+      
+      &.userformsgroup {
+        
+        border: 1px solid $gray-300;
+        margin: $spacer 0;
+        padding: 0 $spacer;
+        
+        > legend {
+          width: auto;
+          border: 0;
+          padding: 0 $spacer-quarter;
+          margin-left: -$spacer-quarter;
+          margin-right: -$spacer-quarter;
+        }
+        
+      }
+      
+    }
+    
   }
   
 }
