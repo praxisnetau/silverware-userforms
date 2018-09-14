@@ -53,8 +53,8 @@ class UserFormExtension extends Extension
             
             // Add Required Fields:
             
-            foreach ($this->owner->getRequiredFieldNames() as $name) {
-                $validator->addRequiredField($name);
+            foreach ($this->owner->getRequiredFieldObjects() as $field) {
+                $validator->addRequiredField($field->Name, $field->ErrorMessage);
             }
             
             // Extend Validator Object:
@@ -76,5 +76,15 @@ class UserFormExtension extends Extension
     public function getRequiredFieldNames()
     {
         return $this->owner->getRequiredFields()->getRequired();
+    }
+    
+    /**
+     * Answers a list of required field objects from the extended user form.
+     *
+     * @return DataList
+     */
+    public function getRequiredFieldObjects()
+    {
+        return $this->owner->getController()->data()->Fields()->filter('Required', 1);
     }
 }
